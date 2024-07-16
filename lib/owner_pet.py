@@ -9,15 +9,18 @@ class Pet:
         self.pet_type = pet_type
         self.owner = owner
         Pet.all.append(self)
+        if owner is not None:
+            owner.add_pet(self)
+
     pass
 
-class Owner:
+class Owner: 
     def __init__(self, name):
         self.name = name
         self._pets = []
 
     def pets(self):
-             return self._pets
+        return self._pets
 
     def add_pet(self, pet):
         if not isinstance(pet, Pet):
@@ -27,5 +30,4 @@ class Owner:
 
     def get_sorted_pets(self):
         return sorted(self._pets, key=lambda pet: pet.name)
-    
     pass
