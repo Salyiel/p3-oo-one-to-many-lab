@@ -1,4 +1,8 @@
 class Pet:
+   
+    pass
+
+class Owner:
     def __init__(self, name):
         self.name = name
         self._pets = []
@@ -14,7 +18,5 @@ class Pet:
 
     def get_sorted_pets(self):
         return sorted(self._pets, key=lambda pet: pet.name)
-    pass
-
-class Owner:
+    
     pass
